@@ -30,38 +30,69 @@ section {
 	min-width: 10px;
 	padding: 1rem 0;
 	min-height: 300px;
-	display: block;
+	/* Display Flex stellt Elemente nebeneinander */
+	display: flex;
+	/* justify-content richtet auf der X-Achse aus */
+	justify-content: space-around;
+	/* align-items  richtet auf der y-Achse aus */
+	align-items: stretch;
 }
+
 
 
 .col {
 	min-width: 20px;
 	min-height: 70px;
 	margin: 10px;
+
 }
 
 .trolley-grey {
 	background: #7D7C84;
+	/* flex grow ist ein Faktor wieviel Platz darf das Element im Vergleich
+	zu den anderen einnehmen */
+	flex-grow: 1;
+	/*  setzt das element an das Ende, die Order beginnt bei 0, 1 geht nach rechts
+	danach käme eine beliebige höhere Zahl */
+	order:1;
 }
 
 .sea-green {
 	background: #2D93AD;
+	flex-grow: 1;
 }
 
 .middle-red {
 	background: #DE8F6E;
-
+	flex-grow: 1;
 }
 
 .black {
 	background: #000;
+	flex-grow: 1;
+	order:2;
 }
 
 .orange {
 	background: orange;
+	flex-grow: 1;
+	/* auch negative Zahlen bei order möglich um die Reihenfolge zu verändern */
+	order:-1;
 
 }
 
 .olive {
 	background: olive;
 }
+
+@media (min-width:768px) {
+    .row{
+			display:block;
+  	}
+	}
+
+@media (min-width:1200px) {
+	    section{
+				background: red;
+	  	}
+		}
